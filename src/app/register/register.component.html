@@ -1,0 +1,47 @@
+
+ <br>
+<br>
+<br>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <h2 class="active"> Register</h2> 
+      <form [formGroup]="registerDetails" (ngSubmit)="registerSave(registerDetails)">
+        <input type="text" id="login" class="fadeIn second" formControlName="name" name="name" pattern="[a-zA-Z]" required="true" placeholder="Enter Name">
+        <input type="text" id="login" class="fadeIn second" formControlName="email" name="email" 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="true" placeholder="Enter Email">
+        <div class="alert alert-danger" role="alert"
+        *ngIf="registerDetails.controls['email'].invalid && (registerDetails.controls['email'].dirty ||
+        registerDetails.controls['email'].touched)" >
+        <div *ngIf="registerDetails.controls['email'].errors.required">Email is required</div>
+        <div *ngIf="registerDetails.controls['email'].errors.pattern">Enter Vaild Email Address </div>
+      </div>
+
+        <input type="text" id="password" class="fadeIn third" formControlName="password" name="password" 
+        required="true" minlength="4" maxlength="6"  placeholder="Enter Password">
+        <div class="alert alert-danger" role="alert"
+        *ngIf="registerDetails.controls['password'].invalid && (registerDetails.controls['password'].dirty || 
+        registerDetails.controls['password'].touched)" >
+        <div *ngIf="registerDetails.controls['password'].errors.required">Password is required</div>
+        <div *ngIf="registerDetails.controls['password'].errors.minlength">Password must be at least 4 characters</div>
+        <div *ngIf="registerDetails.controls['password'].errors.maxlength">Password must be Less than 6 characters</div>
+      </div>
+
+        <input type="text" id="password" class="fadeIn third" formControlName="mobile" name="mobile"
+        required="true"  maxlength="10" placeholder="Enter Mobile">
+        <div class="alert alert-danger" role="alert"
+        *ngIf="registerDetails.controls['mobile'].invalid && (registerDetails.controls['mobile'].dirty || 
+        registerDetails.controls['mobile'].touched)" >
+        <div *ngIf="registerDetails.controls['mobile'].errors.required">Password is required</div>
+        <div *ngIf="registerDetails.controls['mobile'].errors.minlength">Password must be at least 4 characters</div>
+      </div>
+        <input type="submit"
+        class="fadeIn fourth" value="Register">
+      </form>
+      <div id="formFooter">
+        <a routerLink="/login">Already Have an Account</a>
+      </div>
+  
+    </div>
+  </div> 
+
+

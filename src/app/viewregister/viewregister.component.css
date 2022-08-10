@@ -1,0 +1,11 @@
+table{
+border: black;
+width: 500;
+column-rule-style: dotted;
+}
+centre{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+
+}

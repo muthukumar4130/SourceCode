@@ -1,0 +1,19 @@
+
+
+<br>
+<br>
+<br>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Login</h2> 
+      <form [formGroup]="loginDetails" (ngSubmit)="checklogin(loginDetails)">
+        <input type="text" class="fadeIn second" formControlName="email" placeholder="Enter Email">
+        <input type="text" class="fadeIn second" formControlName="password" placeholder="Enter Password"><br><br>
+        <input type="submit" class="fadeIn second" value="Login">
+        </form>
+        <div  id="formFooter" class="active">
+            <a routerLink="/register">For Registration</a>
+        </div>
+    </div>
+    </div>

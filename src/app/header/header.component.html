@@ -1,0 +1,25 @@
+<div class="header border " >
+    
+    <div class="headercentre" >
+      <div>
+<h3 style="text-align: center;">Scube</h3>
+    
+      <div style="text-align:right" >
+              <div *ngIf="!isLoggedIn" >
+                <button>
+                <a  href="/register" class="nav-link" routerLink="register">Register</a>
+              </button>
+             
+              <button>
+              <a  href="/login" class="nav-link" routerLink="login">Login</a>
+           </button>
+          </div>
+          
+           <div *ngIf="isLoggedIn">
+           <button>
+              <a  href class="nav-link" (click)="logout()">LogOut</a>
+           </button></div>
+          </div>   
+      </div>  </div>
+    
+</div> 

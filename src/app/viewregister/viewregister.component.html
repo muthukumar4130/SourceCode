@@ -1,0 +1,41 @@
+<div>
+  <a routerLink="/viewregister">View Register</a>
+</div>
+
+<div>
+   <div class="centre">
+    <h3 style="align-items: center;">Registration List</h3>
+   </div>
+    <br>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th>SNo</th>
+                <th>UserName</th>
+                <th>EmailId</th>
+                <th>Mobile</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                </tr>
+             <!--  *ngIf="roles == 'ROLE-ADMIN'"--> 
+            </thead>
+            <tbody>
+                <tr *ngFor="let register of registerlist">
+                    <td>{{register.sno}}</td>
+                    <td>{{register.name}}</td>
+                    <td>{{register.email}}</td>
+                    <td>{{register.mobile}}</td>
+                    <td>
+                        <button (click)="editRegistration(register.id)" class="btn btn-danger">Update</button>
+                    </td>
+                    <td>
+                        <button (click)="deleteRegistration(register.id)" class="btn btn-danger">Delete</button>
+                    </td>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

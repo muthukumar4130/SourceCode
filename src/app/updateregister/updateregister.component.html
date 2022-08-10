@@ -1,0 +1,69 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Register</h2> 
+      
+
+        <form   name="form"  #f="ngForm" (ngSubmit)="f.form.valid && updateRegister()">
+          
+        <input type="text" id="login" class="fadeIn second" placeholder="Enter Name"
+        required minlength="4"  [(ngModel)]="registers.name" name="name"  #username="ngModel">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="username.errors && f.submitted"
+        >
+          <div *ngIf="username.errors.required">username is required</div>
+          <div *ngIf="username.errors.minlength">
+            username must be at least 4 characters
+          </div>
+        </div>
+        <input type="text" id="login" class="fadeIn second"  placeholder="Enter Email" required  email  [(ngModel)]="registers.email"
+        #email="ngModel"  name="email">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="email.errors && f.submitted"
+        >
+          <div *ngIf="email.errors.required">email is required</div>
+          <div *ngIf="email.errors.email">
+            Email must be a valid email address
+          </div>
+        </div>
+        <input type="text" id="password" class="fadeIn third" placeholder="Enter Password" [(ngModel)]="registers.password"
+        required minlength="4" name="password"  #password="ngModel">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="password.errors && f.submitted"
+        >
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">
+            Password must be at least 4 characters
+          </div>
+        </div>
+
+        <input type="text" id="password" class="fadeIn third" placeholder="Enter Mobile" [(ngModel)]="registers.mobile" 
+        required minlength="10" name="mobile"  #mobile="ngModel">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="mobile.errors && f.submitted"
+        >
+          <div *ngIf="mobile.errors.required">Mobile Number is required</div>
+          <div *ngIf="mobile.errors.minlength">
+            Mobile Number must be at least 10 characters
+          </div>
+        </div>
+        <input type="hidden" [(ngModel)]="registers.id" name="id">
+ 
+        <input type="submit" class="fadeIn fourth" value="Update">
+        <div class="alert alert-warning" *ngIf="f.submitted ">
+          Signup failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+  
+      
+  
+    </div>
+  </div>
